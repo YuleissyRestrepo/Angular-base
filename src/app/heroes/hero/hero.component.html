@@ -1,0 +1,38 @@
+<h1>{{name }}</h1>
+
+<dl>
+<td>Nombre:</td>
+<dd>{{name}}</dd>
+
+<td>Edad:</td>
+<dd>{{age}}</dd>
+
+<td>Metodo:</td>
+
+// de esta forma se invoca o se llama una funcion
+<dd> {{getHeroDescription()}}</dd>
+
+<td>Capitalizado:</td>
+<dd>{{capitalizedName}}</dd>
+</dl>
+
+<!-- ngIf es una ditectiva (Esta desaparec el Bton cuando ya fue utilizado y no se nesecita mas, funciona como un booleano ) -->
+<button
+  *ngIf="name !== 'Spiderman'"
+  (click)="changeHero()"
+  class=" btn btn-primary mx-2">
+   Combiar nombre
+</button>
+
+<button
+  *ngIf="age!== 25"
+  (click)="changeEge()"
+  class="btn btn-primary mx-2">
+  Combiar edad
+</button>
+
+<button
+  (click)="resetForm()"
+  class="btn btn-primary mx-2">
+  Reset
+</button>

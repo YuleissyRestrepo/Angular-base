@@ -1,0 +1,30 @@
+<h3>Litado de Heroes </h3>
+
+<!-- el ingif permite remover una parte del DOM basado en la experecion "ShowSection"-->
+<!--div = es un agrupador en html-->
+<div *ngIf=" deletedHeroe ; else nothingWasDeleted ">
+<h3> Heroe borrado <small class="text-danger">{{ deletedHeroe}}</small></h3>
+</div>
+
+
+<!--#nothingWasDeledt es un referencia local -->
+<ng-template #nothingWasDeleted >
+<h3 > No ha borrado nada </h3>
+</ng-template>
+
+<button
+  *ngIf="heroName.length> 0"
+  (click)="removeLastHeroe()"
+  class="btn btn-outline-danger">
+  Borrar ultimo heroe
+</button>
+
+
+<ul Class= "mt-2 list-group">
+
+  <!-- ngfor sirve para duplicar el <li> basado de en la cantodada de lementos dentro de la lista -->
+  <li *ngFor="let name of heroName"
+      class = "list-group-item">
+      {{ name }}
+  </li>
+</ul>
